@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using static Empoyeewage.DailyWage;
 
 namespace Empoyeewage
 {
@@ -30,17 +31,23 @@ namespace Empoyeewage
                Console.WriteLine("total wage : " + empWageBuilder1.getTotalWage("Dmart"));*/
 
             //UC-12 list of multiple companies
-            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
-            empWageBuilder.AddCompanyEmpWage("Reliance", 20, 10, 100);
-            empWageBuilder.AddCompanyEmpWage("Dmart", 20, 20, 110);
-            empWageBuilder.ComputeEmpWage();
+              EmpWageBuilderArray1 empWageBuilder = new EmpWageBuilderArray1();
+              empWageBuilder.AddCompanyEmpWage("Reliance", 20, 10, 100);
+              empWageBuilder.AddCompanyEmpWage("Dmart", 20, 20, 110);
+              empWageBuilder.ComputeEmpWage();
 
-
-
-
-
+            //Store the Daily Wage
+            EmpWageBuilder empWageBuilder1 = new EmpWageBuilder();
+            empWageBuilder1.AddCompanyEmpWage("Reliance", 20, 20, 100);
+            empWageBuilder1.AddCompanyEmpWage("Dmart", 20, 30, 120);
+            empWageBuilder1.ComputeEmpWage();
+            Console.WriteLine($"Total wage for Reliance Company : {empWageBuilder1.getTotalWage1("Reliance")}");
         }
+
+
+
     }
+    
 }
 
 

@@ -11,16 +11,12 @@ namespace Empoyeewage
         void ComputeEmpWage();
         void AddCompanyEmpWage(string company, int wagePerHour, int numWorkingDays, int maxHoursPerMonth);
     }
-
-
-    public class EmpWageBuilderArray : IEmployeeWage
-    {/// <summary>
-     /// storing company employee wage in a list instead of array
-     /// </summary>
+    public class EmpWageBuilderArray1 : IEmployeeWage
+    {
         private int numOfCompany = 0;
         private LinkedList<CompanyEmpWage> companyEmpWageList;
 
-        public EmpWageBuilderArray()
+        public EmpWageBuilderArray1()
         {
             //initilizing linked list
             this.companyEmpWageList = new LinkedList<CompanyEmpWage>();
@@ -43,7 +39,6 @@ namespace Empoyeewage
                 Console.WriteLine(companyEmpWage.Result());
             }
         }
-
         private int ComputeEmpWage(CompanyEmpWage companyEmpWage)
         {
             //constants
@@ -90,8 +85,5 @@ namespace Empoyeewage
             }
             return totalHours * companyEmpWage.wagePerHour;
         }
-
-
-
     }
 }
